@@ -11,5 +11,7 @@ void AdcInit(){
 int AdcConversion(int canal){
     ADC0->SC1[0] = ADC_SC3_ADCH(canal);
     while (!(ADC0->SC1[0] & ADC_SC1_COCO_MASK));
-    return ADC0->R[0];
+    int ValorMedio = ADC0->R[0];
+    int ValorTotal = ((3,6 * ValorMedio)/65535);
+    return ValorTotal;
 }
