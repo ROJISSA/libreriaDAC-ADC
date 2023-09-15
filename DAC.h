@@ -1,8 +1,9 @@
-#ifndef "Libreria_DAC.h"
+#ifndef DAC_H
+#define DAC_H
 
-void SIM_SCGC2();
-void DACx_C0();
-void DACx_DATnL();
-void DACx_DATnH();
+#include <stdint.h>
+
+void DacInit();
+void DacConversion();
 
 #endif
